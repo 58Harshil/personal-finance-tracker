@@ -37,9 +37,8 @@ Make sure you have the following installed:
    cd personal-finance-tracker
    
 2. Install dependencies:
-
-cd client
-npm install
+   cd client
+   npm install
 
 3. Start the development server:
    npm start
@@ -60,6 +59,7 @@ npm install
 6. Add .env file
    MONGOURL=mongodb://localhost:27017/
    PORT=8000
+
 
 ### API Endpoints
 
