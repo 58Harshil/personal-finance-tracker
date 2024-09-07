@@ -38,7 +38,7 @@ Make sure you have the following installed:
    
 2. Install dependencies:
 
-cd frontend
+cd client
 npm install
 
 3. Start the development server:
@@ -47,15 +47,16 @@ npm install
 ### Backend Setup
 
 1. Navigate to the backend directory:
-   cd backend
+   cd server
 
 2. Install dependencies:
    npm install
+   npm express
 
-3. Start the server:
+4. Start the server:
    npm start
 
-4. Ensure MongoDB is running on your local machine or set up a MongoDB cloud instance and update the connection string in the backend code.
+5. Ensure MongoDB is running on your local machine or set up a MongoDB cloud instance and update the connection string in the backend code.
 
 ### API Endpoints
 
