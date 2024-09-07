@@ -57,6 +57,9 @@ npm install
    npm start
 
 5. Ensure MongoDB is running on your local machine or set up a MongoDB cloud instance and update the connection string in the backend code.
+6. Add .env file
+   MONGOURL=mongodb://localhost:27017/
+   PORT=8000
 
 ### API Endpoints
 
