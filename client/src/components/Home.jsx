@@ -38,7 +38,7 @@ const Home = () => {
             type,
             date: new Date(date).toISOString(), // Convert to ISO format for consistency
         };
-
+    
         if (editMode) {
             // Update transaction
             updateTransaction(editTransactionId, transactionData);
@@ -48,12 +48,16 @@ const Home = () => {
             // Add new transaction
             axios.post('http://localhost:8000/api/create', transactionData)
                 .then(response => {
-                    setTransactions([...transactions, response.data]);
-                    calculateBalance([...transactions, response.data]);
+                    axios.get('http://localhost:8000/api/getall')
+                        .then(response => {
+                            setTransactions(response.data);
+                            calculateBalance(response.data);
+                        })
+                        .catch(error => console.error('Error fetching transactions:', error));
                 })
                 .catch(error => console.error('Error adding transaction:', error));
         }
-
+    
         // Clear form fields
         setDescription('');
         setAmount('');
