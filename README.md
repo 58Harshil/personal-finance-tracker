@@ -37,9 +37,8 @@ Make sure you have the following installed:
    cd personal-finance-tracker
    
 2. Install dependencies:
-
-cd frontend
-npm install
+   cd client
+   npm install
 
 3. Start the development server:
    npm start
@@ -47,15 +46,20 @@ npm install
 ### Backend Setup
 
 1. Navigate to the backend directory:
-   cd backend
+   cd server
 
 2. Install dependencies:
    npm install
+   npm express
 
-3. Start the server:
+4. Start the server:
    npm start
 
-4. Ensure MongoDB is running on your local machine or set up a MongoDB cloud instance and update the connection string in the backend code.
+5. Ensure MongoDB is running on your local machine or set up a MongoDB cloud instance and update the connection string in the backend code.
+6. Add .env file
+   MONGOURL=mongodb://localhost:27017/
+   PORT=8000
+
 
 ### API Endpoints
 
@@ -94,3 +98,4 @@ Feel free to customize this template to better fit your project’s needs!
 
 ### Document https://drive.google.com/file/d/18QfRmchrWZqq_FjDGrFBe1kmj-Mdt7n1/view?usp=drive_link
 ### Document Answer https://docs.google.com/document/d/1qRvALVdps8BFPkO33oy8AmNrLhc5Pc49vwrvkUgpFRs/edit?usp=sharing
+

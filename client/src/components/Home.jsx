@@ -49,15 +49,21 @@ const Home = () => {
             type,
             date: new Date(date).toISOString(),
         };
-
+    
         if (editMode) {
             await updateTransaction(editTransactionId, transactionData);
             setEditMode(false);
             setEditTransactionId(null);
         } else {
-            await createTransaction(transactionData);
+            // Add new transaction
+            axios.post('http://localhost:8000/api/create', transactionData)
+                .then(response => {
+                    setTransactions([...transactions, response.data]);
+                    calculateBalance([...transactions, response.data]);
+                })
+                .catch(error => console.error('Error adding transaction:', error));
         }
-
+    
         // Clear form fields
         setDescription('');
         setAmount('');
